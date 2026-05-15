@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта памяти Блокада Ленинграда</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-content">
+            <h1>Карта памяти</h1>
+            <ul>
+                <li><a href="#map-section">Карта</a></li>
+                <li><a href="#facts">Факты</a></li>
+                <li><a href="#sources">Источники</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="hero">
+            <h2>Интерактивная хроника блокады Ленинграда</h2>
+            <p class="subtitle">8 сентября 1941 - 27 января 1944</p>
+        </header>
+
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterEvents('all')">Все события</button>
+            <button class="filter-btn" onclick="filterEvents('military')">Военные события</button>
+            <button class="filter-btn" onclick="filterEvents('social')">Социальные события</button>
+        </div>
+
+        <section id="map-section" class="map-section">
+            <div id="map" class="map-container"></div>
+            <div class="sidebar">
+                <h3>Информация</h3>
+                <div class="info-box">
+                    <p><strong>Общее количество событий:</strong> <span id="eventCount">10</span></p>
+                    <p><strong>Видимых событий:</strong> <span id="visibleCount">10</span></p>
+                    <p><strong>Дни блокады:</strong> 872</p>
+                    <p><strong>Население (сентябрь 1941):</strong> ~1,9 млн</p>
+                </div>
+
+                <h4>События на карте</h4>
+                <div id="eventsList" class="events-list"></div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h3>О Блокаде Ленинграда</h3>
+            <p>
+                Блокада Ленинграда - одна из самых трагических страниц Второй мировой войны. Город был полностью
+                изолирован немецкими войсками в течение 872 дней, что привело к массовому голоду и смертям среди
+                гражданского населения.
+            </p>
+        </section>
+
+        <section id="timeline" class="timeline-section">
+            <h3>Основные события</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">8 сентября 1941</div>
+                    <div class="timeline-title">Начало блокады</div>
+                    <p>Немецкие войска замкнули кольцо вокруг Ленинграда. Город полностью изолирован от материка.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">20 ноября 1941</div>
+                    <div class="timeline-title">Дорога жизни</div>
+                    <p>Лед Ладожского озера позволяет доставлять продовольствие в город по ледяной дороге.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">январь 1942</div>
+                    <div class="timeline-title">Пик смертности</div>
+                    <p>Почти 3500 человек умирают в день от голода и холода. Самый трагический период.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">18 января 1943</div>
+                    <div class="timeline-title">Прорыв кольца</div>
+                    <p>Советские войска прорывают вражеское кольцо. Восстановлена сухопутная связь с городом.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">27 января 1944</div>
+                    <div class="timeline-title">Конец блокады</div>
+                    <p>Блокада полностью снята. 872-дневная осада завершена. Город салютует победе.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sources" class="sources-section">
+            <h3>Источники информации</h3>
+            <ul>
+                <li>Советские исторические архивы</li>
+                <li>Военные архивы Российской Федерации</li>
+                <li>Дневники очевидцев блокады</li>
+                <li>Демографические данные</li>
+                <li>Музей обороны и блокады Ленинграда</li>
+                <li>Архивы продовольственного снабжения</li>
+                <li>Культурные архивы Санкт-Петербурга</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>Интерактивная карта памяти веб-пространственная хроника блокады Ленинграда</p>
+        <p>Научно-исследовательский проект ИТМО Санкт-Петербург 2026</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
